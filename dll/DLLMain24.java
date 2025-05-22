@@ -18,6 +18,12 @@ public class DLLMain24 {
             System.out.println("6. Cari Mahasiswa berdasarkan NIM");
             System.out.println("7. Sisipkan setelah NIM tertentu");
             System.out.println("8. Tampilkan jumlah data");
+            System.out.println("9. Tampilkan data pada node pertama");
+            System.out.println("10. Tampilkan data pada node terakhir");
+            System.out.println("11. Tampilkan data pada indeks tertentu");
+            System.out.println("12. Tambah data pada indeks tertentu");
+            System.out.println("13. Hapus data setelah NIM tertentu");
+            System.out.println("14. Hapus data pada indeks tertentu");
             System.out.println("0. Keluar");
             System.out.print("Pilih menu: ");
             pilihan = scan.nextInt();
@@ -65,6 +71,46 @@ public class DLLMain24 {
                 case 8:
                     System.out.println("Jumlah data saat ini: " + list.size());
                     break;
+                case 9:
+                    list.getFirst();
+                    break;
+                case 10:
+                    list.getLast();
+                    break;
+                case 11:
+                    System.out.print("Masukkan indeks yang ingin ditampilkan: ");
+                    int idx = scan.nextInt();
+                    scan.nextLine();
+                    list.getIndex(idx);
+                    break;
+                case 12:
+                    System.out.println("Masukkan indeks yang ingin disisipkan:");
+                    int indeksTambah = scan.nextInt();
+                    scan.nextLine();
+                    System.out.print("Masukkan NIM: ");
+                    String nimTambah = scan.nextLine();
+                    System.out.print("Masukkan Nama: ");
+                    String namaTambah = scan.nextLine();
+                    System.out.print("Masukkan Kelas: ");
+                    String kelasTambah = scan.nextLine();
+                    System.out.print("Masukkan IPK: ");
+                    double ipkTambah = scan.nextDouble();
+                    scan.nextLine();
+                    Mahasiswa24 mhsTambah = new Mahasiswa24(nimTambah, namaTambah, kelasTambah, ipkTambah);
+                    list.add(indeksTambah, mhsTambah);
+                    break;
+                case 13:
+                    System.out.print("Masukkan NIM acuan: ");
+                    String nimAcuan = scan.nextLine();
+                    list.removeAfter(nimAcuan);
+                    break;
+                case 14: {
+                    System.out.print("Masukkan indeks yang ingin dihapus: ");
+                    int indeksHapus = scan.nextInt();
+                    scan.nextLine();
+                    list.remove(indeksHapus);
+                    break;
+                }
                 case 0:
                     System.out.println("Keluar dari program.");
                     break;

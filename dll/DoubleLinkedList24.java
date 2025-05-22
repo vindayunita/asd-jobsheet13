@@ -23,7 +23,6 @@ public class DoubleLinkedList24 {
             System.out.println("Indeks tidak valid!");
             return;
         }
-
         if (index == 0) {
             addFirst(data);
         } else if (index == size) {
@@ -33,7 +32,6 @@ public class DoubleLinkedList24 {
             for (int i = 0; i < index; i++) {
                 current = current.next;
             }
-
             Node24 newNode = new Node24(data);
             newNode.prev = current.prev;
             newNode.next = current;
